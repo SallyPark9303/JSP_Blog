@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+  function Loadfunc(value){
+	  var reader = new FileReader();
+	  reader.onload= function(e){
+		  $("#LoadImg").attr('src', e.target.result);
+     }
+	 reader.readAsDataURL(value.files[0]);
+
+  }
+
+
+  </script>
+ </head>
+ <body>
+ <input type="file" name="imgAttach" id="imgAttach" onchange="Loadfunc(this)">
+ 
+ <img id="LoadImg">
+  
+ </body>
+</html>
